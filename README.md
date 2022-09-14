@@ -9,3 +9,5 @@ https://typing-speed-test.aoeu.eu/
 
 
 If you have more time, you can build your typing speed test into a typing trainer, with high scores and more text samples. You can design your program any way you want.
+
+![alt text](https://github.com/distareza/PythonGUI_TypingSpeedTest/raw/master/Screenshot20220914101647.png)
