@@ -69,6 +69,11 @@ def key_press(event):
         # Press spacebar or Enter
         if event.keycode == 32 or event.keycode == 13:
             text = input.get().strip()
+
+            # empty string will be ignored
+            if not bool(text):
+                return
+
             print(text)
             correct_word = False
             for i in range(20):
@@ -82,7 +87,7 @@ def key_press(event):
                 correct_typing_counter += 1
             else:
                 update_score = -5
-                wrong_typing_counter -= 1
+                wrong_typing_counter += 1
 
             score += update_score
             updateLabel()
@@ -108,7 +113,9 @@ def startCounter():
         if delta_time > 60:
            break
 
-    message = f"Correct Word Count Type Per Minutes is {correct_typing_counter}\nScore : {score}"
+    message = f"Correct Word Count Type Per Minutes is {correct_typing_counter}\n" \
+              f"Wrong Word Count : {wrong_typing_counter}\n" \
+              f"Score : {score}"
     labelResult.config(text=message)
     tkinter.messagebox.showinfo(title="Your Typing Speed Result", message=message)
     input.config(state="disabled")
